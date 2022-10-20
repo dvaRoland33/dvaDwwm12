@@ -1,0 +1,633 @@
+@import url(https://fonts.google.com/specimen/Montserrat/?query=mont);
+@import url(https://fonts.google.com/specimen/Open+Sans?query=open+sans);
+
+:root {
+    --fondgris: rgba(107, 100, 100, 0.424);
+    --flou: rgba(255, 255, 255, 0.659);
+
+    --blanc: #FFFFFF;
+    --orange: #FAB637;
+    --rose: #FF4848;
+    --marron: #CC6119;
+    --grisclair: #ECEFF3;    
+    --noir: #232628;  
+    --bleu: #6C98E1;
+
+    --debug: #bbb23a;
+    
+}
+/* WAI*/
+.accessibilite{
+    position: absolute;
+    left: -15000px;  
+}
+
+/* global */
+body {
+    font-size: 1rem;
+    font-family: Montserrat,Verdana, Tahoma, sans-serif;
+}
+body h1{
+   font-family: Open_Sans,Arial, Helvetica, sans-serif; 
+}
+
+/* bandeau superieur*/
+#bandeau{
+    background-color: var(--noir);
+    color: var(--blanc);
+    height: 250px;
+}
+#bandeau h1{
+    width: 300px;
+    display: block;
+    position: relative;
+    bottom: 10px;
+    top: 100px;
+    left: 10px; 
+    text-align: left;
+}
+#bandeau h1 span{
+    color : var(--orange);    
+}
+#bandeau ul{
+    list-style: none;
+}
+#bandeau img{
+    height: 40px;
+    width: auto;
+}
+.titreBandeau{
+    display: flex;
+    flex-direction: columns;
+    width: 100px 4fr; 
+    justify-content:flex-start;
+    padding-right: 100px;
+}
+.listeBandeau{
+    display: flex;
+    flex-direction: columns;
+    width: 1fr ; 
+    gap: 20px;
+}
+#telephoneCA{
+    display: block;
+    position: relative;
+    top: 40px;
+    left: -300px;
+    width: 200px;
+    text-transform: uppercase;
+    font-size: .5em;
+    color: var(--orange);
+    
+}
+#telephoneCA>h2{
+    position:relative;
+    top : -50px;
+    left : 40px;
+}
+#telephoneCA>p{
+    color :var(--blanc);
+    font-size: 1.7em;
+    position: relative;
+    top : -65px;
+    left: 40px;
+}
+#adresseCA, #horairesCA, #reseauxSociauxCA{
+    display: none;
+}
+/* menu */
+#menu button{
+    position: absolute;
+    top: 10px;
+    right: 10px; 
+    height: 30px;
+    width: 30px;
+    background-color: var(--noir);
+}  
+#menu img{ /* image menuburger*/
+    display:block;
+    height: 40px;
+    width: auto;
+    position: relative;
+    top : -10px;
+    right: 10px;
+}
+#menu ul{
+    display : none;
+}
+.menuSelection{
+    background-color: var(--bleu);
+}
+/* contenu de la page*/
+#contenu{
+    position:relative;
+    /*background-color: var(--debug);*/
+}
+
+/* page accueil*/
+#index_intro{
+    display:none;
+}
+
+#index_presentation{
+    padding-top: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+#index_presentation article img{
+    width: 100%;
+    height: auto;
+}
+#index_presentation article h2 strong{
+    color: var(--orange);
+}
+/* pour changer la puce de la liste   on la désactive et on la recrée point par point*/
+#index_presentation ul{
+    list-style: none;
+}
+#index_presentation li::before{
+    content :"\2714";
+    color:var(--orange);
+    padding: 10px;
+
+}
+#index_presentation{
+    display: flex;
+    gap: 10px;
+    padding-top: -40px;
+    padding-left: 100px;
+    padding-right: 40px;
+}
+
+#index_orientation{
+       display: flex;
+       gap : 30px;
+       padding-left: 20px;
+       padding-right: 20px;
+       background-image: url(/images/vente-location.jpg);
+       background-repeat: no-repeat;
+       background-size: cover;
+}
+#index_orientation li{
+    list-style-type: none;
+    padding: 20px;
+}
+.couleurColonnes:nth-child(odd){
+    background-color: var(--orange);
+}
+.couleurColonnes:nth-child(even){
+    background-color: var(--rose);
+}
+
+#index_vehiculesRecents{ /* gestion du pavé*/
+    background-color: var(--noir);
+    color: var(--blanc);
+    padding-left: 100px;
+    padding-right: 100px;
+    position:relative;
+    top:-25px;
+    min-height: 350px;
+}
+#index_vehiculesRecents h1{
+    text-align: center;
+    padding-top: 20px;
+    border-width: 1px;
+    border-bottom: solid;
+    border-color: var(--orange);
+    border-width: 1px;
+}
+#index_vehiculesRecents ul{
+    display: contents;
+    flex-direction: row;
+    width: 1fr ;
+    padding-left: 0;
+    gap:20px;
+    list-style-type: none;
+    justify-content:space-between;
+}
+#index_vehiculesRecents img{
+    width :100%;
+    height: auto;
+}
+#index_vehiculesRecents li section{
+    min-height: 70px;
+    background-color: var(--fondgris);
+    padding: 0 10px;
+}
+#index_vehiculesRecents a{
+    text-decoration: none;
+    color: var(--blanc);
+}
+#index_vehiculesRecents .deuxColonnes{
+    display: grid;
+    grid-template-columns: 1fr 80px;  
+}
+#index_vehiculesRecents span{
+    background-color: var(--bleu);
+    text-align:right;
+    height: 25px;
+    padding-top: 10px;
+    position: relative;
+    top: 10px;
+}
+#index_vehiculesRecents em{
+    text-decoration: line-through;
+    background-color: var(--bleu);
+    color: var(--noir);
+    font-size: .8em;
+    position: relative;
+    top: -5px;
+}
+#index_vehiculesRecents span p{
+    position: relative;
+    top: -20px;
+    background-color: var(--bleu);
+}
+
+#index_PourquoiNousChoisir{
+    display: flex;
+    flex-direction: column;
+}
+
+#index_PourquoiNousChoisir h1{
+    text-align: center;
+    padding-top: 0px; 
+    padding-bottom: 30px; 
+}
+#index_PourquoiNousChoisir h2{
+    position: relative;
+    top : -25px;
+}
+#index_PourquoiNousChoisir div p{
+    position: relative;
+    top : -25px;
+}
+#index_PourquoiNousChoisir ul{
+    display: flex;
+    flex-direction: row;
+    width: 1fr 1fr 1fr 1fr;
+    list-style-type: none;
+    padding-left: 100px;
+    padding-right: 50px;
+    gap: 20px;
+}
+#index_PourquoiNousChoisir img{
+    height: 30px;
+}
+#index_PourquoiNousChoisir a{
+    text-decoration: none;
+    color: var(--blanc);
+}
+#index_PourquoiNousChoisir button{
+    background-color: var(--bleu);
+    border: none;
+    height: 40px;
+    width: 200px;
+    border-radius: 5px ;
+    position:relative;
+    top: 0px;
+    align-items: center;
+    /*left: 100px;*/
+}
+
+
+#index_presentationActivites{
+    display: flex;
+    gap : 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-image: url(/images/vehicule3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 400px;
+}
+#index_presentationActivites div{
+    padding: 40px;
+    position: relative;
+    left:100px;
+    top: 50px;
+    width: 35%;
+    height: 220px;
+    background-color: var(--orange);    
+}
+#index_presentationActivites h1{
+    color:var(--noir);
+}
+#index_presentationActivites h1 span{
+    color: var(--blanc);
+}
+
+/* pieds de page */ 
+#piedDePage{
+    display:block;
+    position: relative;
+    padding: 20px 10px 0 10px;
+    background-color: var(--noir);
+    color: var(--blanc);
+    height: 320px;
+    justify-content: flex-end;
+}
+#conteneurPiedDePage{
+    font-size: .6em;  
+}
+#conteneurPiedDePage h1{
+    font-size: 1em;
+    padding-top: 10px;
+}
+#conteneurPiedDePage h1 strong{
+    color: var(--bleu);
+}
+#conteneurPiedDePage img{
+    height: 30px;
+    width: auto;
+}
+#PDPClub, #PDPhoraires, #PDPnewsletter, #PDPreseaux{
+    width: 100%;
+}
+#PDPnewsletter form div{
+    height: 25px;
+}
+#PDPnewsletter form input{
+    height: 25px;
+    width: 82%;
+    padding : 0;
+    border-width: 0;
+}
+#PDPnewsletter form label img {
+    position: absolute;
+    height: 25px;
+    width: auto;
+}
+#piedDePage>p{    
+    border-top: solid;
+    border-width: 1px;
+    text-align: center;
+    font-size: .6em;
+}
+#PDPreseaux{
+    align-items: center;
+}
+
+
+
+
+
+
+/* ---------------------------------------------------------- */ 
+/* ecran responsive*/
+/* ---------------------------------------------------------- */ 
+/* ---------------------------------------------- */
+/* ecran responsive*/
+@media screen and (min-width:768px){
+    /* bandeau superieur 768 */
+ /* 768*/#bandeau{
+        background-color: var(--noir);
+        color: var(--blanc);
+        height: 100px;
+    }
+/* 768*/#bandeau h1{
+        width: 400px;
+        display: block;
+        position: relative;
+        bottom: center;
+        top: 10px;
+        left: 10px; 
+        text-align: right;
+        font-size: 1.1em;
+       /* color: var(--debug);*/
+    }
+/* 768*/#bandeau h1 span{
+        display : none;
+    }
+/* 768*/.titreBandeau{
+        justify-content: flex-end; /* pour caler à droite*/
+        padding-right: 10px;
+    }
+/* 768*/#adresseCA, #horairesCA, #reseauxSociauxCA{
+        display: contents;
+    }
+/* 768*/#telephoneCA, #adresseCA{
+        display: block;
+        width: 200px;
+        position: relative;
+        top: 0px;
+        left: 0px;
+        text-transform: uppercase;
+        font-size: .5em;
+        color: var(--orange);
+    }
+/* 768*/#telephoneCA>h2{
+        position:relative;
+        top : -50px;
+        left : 40px;
+    }
+/* 768*/#telephoneCA>p{
+        color :var(--blanc);
+        font-size: 1.7em;
+        position: relative;
+        top : -65px;
+        left: 40px;
+    }
+/* 768*/#adresseCA{
+        display: block;
+        position: relative;
+        top: 0px;
+        left: 0px;
+        text-transform: uppercase;
+        font-size: .4em;
+        color: var(--orange);
+    }
+/* 768*/#adresseCA>h2{
+        position:relative;
+        top : -45px;
+        left : 40px;
+    }
+/* 768*/#adresseCA>p{
+        color :var(--blanc);
+        font-size: 1.7em;
+        position: relative;
+        top : -55px;
+        left: 40px;
+    }
+/* 768*/#horairesCA{
+        display: block;
+        position: relative;
+        top: 0px;
+        left: 0px;
+        text-transform: uppercase;
+        font-size: .4em;
+        color: var(--orange);
+    }
+/* 768*/#horairesCA h2 span{
+        color : var(--blanc);
+        text-transform: none;
+    }
+
+    /* menu */
+/* 768*/#menu{
+        height: 40px;
+        background-color: var(--fondgris);
+        position: relative;
+        top: -20px;
+        width: 100%;
+    } 
+/* 768*/#menu button{
+    display: none;
+    }
+/* 768*/#menu img{ /* image menuburger*/
+        display: none;
+    }
+/* 768*/#menu ul{
+        display:flex; 
+    }
+/* 768*/.menu{
+        display: flex;
+        flex-direction: row;
+        width: 1fr;
+        text-align: center;
+        justify-content: flex-end; /* pour caler le menu à droite*/
+        padding-right: 100px;
+    }
+/* 768*/#menu li{
+        position: relative;
+        top : 4px;
+        width: 100px;
+        height: 35px;
+        list-style-type: none;
+        text-transform: uppercase;
+    }
+/* 768*/#menu li:hover{
+        background-color: var(--marron);
+        height: 35px;        
+    }
+/* 768*/#menu li a:hover{
+        color: var(--blanc);
+    }
+/* 768*/#menu li a{
+        text-decoration: none;
+        position: relative;
+        top: 8px;
+    } 
+/* contenu*/
+/* page accueil*/
+/* 768*/#index_intro{
+        display:contents;
+    }
+/* 768*/#index_intro img{
+        position:relative;
+        top: -21px;
+        width: 100%;
+    }
+/* 768*/#index_intro h1{
+        background-color: var(--noir);
+        color:var(--blanc);
+        height: 60px;
+        padding-left: 100px;        
+        position:relative;
+        top: -90px;
+        display: table-cell;  /* pour considérer la hauteur de ligne sur le cadrage vertical*/
+        vertical-align:middle;
+    }
+/* 768*/#index_intro h1 strong{
+        color: var(--orange);    
+}    
+
+
+/* 768*/#index_presentation{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: -40px;
+    padding-left: 100px;
+    padding-right: 40px;
+}
+/* 768*/.deuxColonnes{
+    display: flex;
+    flex-direction: row;
+    width: 1fr 1fr;
+    gap : 20px;
+}
+/* 768*/.alternanceColonnes:nth-child(odd){
+    display: flex;
+    flex-direction: row;
+    gap : 20px;
+}
+/* 768*/.alternanceColonnes:nth-child(even){
+    display: flex;
+    flex-direction:row-reverse;
+    gap : 20px;
+}
+/* 768*/#index_presentation article img{
+    width: 40%;
+    height: auto;
+ }
+ /* 768*/#index_orientation{
+    padding-left: 100px;
+    padding-right: 100px;
+ }
+
+/* 768*/#index_vehiculesRecents ul{
+        display: flex;
+        flex-direction: row;
+        width: 1fr 1fr 1fr;
+        padding-left: 0;
+        gap:20px;
+        list-style-type: none;
+        justify-content:space-between;
+    }
+
+    /* pieds de page */ 
+/* 768*/#piedDePage{
+        padding: 20px 50px 100px 100px;
+        background-color: var(--noir);
+        color: var(--blanc);
+        height: 10px;
+    }
+/* 768*/#conteneurPiedDePage{
+        display: flex;
+        flex-direction: columns;
+        width: 1fr; 
+        gap: 20px;
+        font-size: .5em; 
+    }
+/* 768*/#PDPClub, #PDPhoraires, #PDPnewsletter, #PDPreseaux{
+        width: 25%;
+    }
+/* 768*/#conteneurPiedDePage h1{
+        font-size: 1em;
+        padding-top: 0;
+    }
+
+
+}/* fin ecran 768*/
+/* ---------------------------------------------- */
+
+/* ---------------------------------------------- */
+/* ---------------------------------------------- */
+/* ---------------------------------------------- */
+@media screen and (min-width:1024px){
+/*1024*/#bandeau h1{
+    width: 400px;
+    font-size: 1.6em;
+    color: var(--blanc);
+}
+
+
+}/* fin ecran 1024*/
+/* ---------------------------------------------- */
+
+/* ---------------------------------------------- */
+/* ---------------------------------------------- */
+/* ---------------------------------------------- */
+@media screen and (min-width:1280px){
+
+}/* fin ecran 1280*/
+/* ---------------------------------------------- */
+
+/* ---------------------------------------------- */
+/* ---------------------------------------------- */
+/* ---------------------------------------------- */
+@media screen and (min-width:1600px){
+
+}/* fin ecran 1600*/
+/* ---------------------------------------------- */
