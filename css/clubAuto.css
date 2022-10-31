@@ -176,6 +176,9 @@ a{ /*  par défaut les liens non soulignés et en blanc*/
 #menu li a:hover{
     color: var(--blanc);
 }
+.menuActif{
+    background-color: var(--bleu);
+}
 #menu li a{
     position: relative;
     top: 8px;
@@ -501,7 +504,8 @@ a{ /*  par défaut les liens non soulignés et en blanc*/
     height:auto;
 } 
 .ctact :nth-child(6) { /* bouton*/
-    order: 6; } 
+    order: 6; 
+} 
 #contact_contenu button{
     background-color: var(--bleu);
     border: none;
@@ -623,6 +627,60 @@ a{ /*  par défaut les liens non soulignés et en blanc*/
 }
 #vente_article a{
     color: var(--noir);
+}    
+
+/* page detail*/
+#contenu_detail{
+    margin-left: 100px;
+    margin-right: 20px;
+}
+#contenu_detail img{
+    width: 80%;
+}
+#contenu_detail nav>ul{
+    background-color: var(--noir);
+    color: var(--blanc);
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+    justify-items: flex-start;
+}
+#contenu_detail nav li{
+    width: 150px;
+    text-align: center;
+    padding-top: 10px;
+    vertical-align: middle;
+}
+#contenu_detail aside {
+    border-left: solid;
+    padding-left: 40px;
+    border-color: var(--orange);
+    border-width: 3px;
+    font-style: italic; 
+}
+.selection{
+    background-color: var(--blanc);
+    color:var(--noir);
+    border-top: solid;
+    border-color: var(--orange);;
+    border-width: 3px;
+    position: relative;
+    top: -3px;
+    height: 43px;
+    font-weight: bold;
+}
+#contenu_detail div>ul{ /* remplacement du caractere liste à puce par coche*/
+    list-style: none;
+}
+#contenu_detail div>ul>li::before{
+    content :"\2714";
+    color:var(--orange);
+    padding: 10px;
+}
+
+
+
 /* ---------------------------------------------------------- */ 
 /* ecran responsive*/
 /* ---------------------------------------------------------- */ 
@@ -778,7 +836,7 @@ a{ /*  par défaut les liens non soulignés et en blanc*/
     background-image: url(/images/vehicule3.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 450px;
+    min-height: 550px;
 }
 /*768*/#index_presentationActivites div{
     padding: 20px;

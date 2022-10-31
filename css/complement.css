@@ -1,0 +1,245 @@
+@import url(https://fonts.google.com/specimen/Montserrat/?query=mont);
+@import url(https://fonts.google.com/specimen/Open+Sans?query=open+sans);
+
+:root {
+/* couleurs de la charte*/ 
+    --blanc: #FFFFFF;
+    --orange: #ee8624;
+    --rose: #FF4848;
+    --marron: #c75b13;
+    --grisclair: #ECEFF3;    
+    --noir: #232628;  
+    --bleu: #6C98E1;
+    --orangeflou: rgba(245, 157, 16, 0.534);
+    --roseflou: rgba(255, 72, 72, 0.733);
+/* couleurs utiles*/
+    --grismoyen: rgba(107, 100, 100, 0.424);
+    --flou: rgba(255, 255, 255, 0.659);    
+    --debug: #bbb23a;
+}
+/* WAI*/
+.accessibilite{
+    position: absolute;
+    left: -15000px;  
+}
+
+/* couleurs de fond*/
+.bkg-blanc{ background-color: var(--blanc);}
+.bkg-orange{ background-color: var(--orange);}
+.bkg-rose{ background-color: var(--rose);}
+.bkg-marron{ background-color: var(--marron);}
+.bkg-grisclair{ background-color: var(--grisclair);}
+.bkg-noir{ background-color: var(--noir);}
+.bkg-bleu{ background-color: var(--bleu);}
+.bkg-orangeflou{background-color: var(--orangeflou);}
+.bkg-roseflou{ background-color: var(--roseflou);}
+
+/* couleurs de texte*/ 
+.txt-blanc{ color: var(--blanc);}
+.txt-orange{ color: var(--orange);}
+.txt-rose{ color: var(--rose);}
+.txt-marron{ color: var(--marron);}
+.txt-grisclair{ color: var(--grisclair);}
+.txt-noir{ color: var(--noir);}
+.txt-bleu{ color: var(--bleu);}
+
+
+#menuHorizontal {
+    height: 2rem;
+    background-color: var(--grisclair);
+ } 
+#telephoneCA{
+    height :150px;
+}
+#telephoneCA,
+#adresseCA,
+#reseauxSociauxCA,
+#horairesCA{
+    position:relative;
+    top : 20px;
+}
+#telephoneCA img,
+#adresseCA img,
+#PDPreseaux img{
+    max-width: 35px; 
+    height: auto;
+ }
+ #reseauxSociauxCA img{
+     width: 35px;
+ }
+ #telephoneCA h2,
+ #adresseCA h2,
+ #horairesCA h2{
+     text-transform: uppercase;
+     font-family: Montserrat,Verdana, Geneva, Tahoma, sans-serif;
+     color: var(--orange);
+     font-size: .6em;
+ }
+ #horairesCA h2 span{
+    text-transform: none;
+ }
+ #telephoneCA p strong{
+     position: relative;
+     top: -.5em;
+     font-size: .8em;
+ }
+ #adresseCA p{
+     font-size: .6em;
+     position: relative;
+     top: -.5em;
+ }
+#PDP{
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-top: 40px;
+}
+#PDPClub h1,
+#PDhoraires h1,
+#PDPnewsletter h1,
+#PDPreseaux h1{
+    color: var(--blanc);
+    font-size: medium;
+}
+#PDPClub h1 strong{
+   font-weight: bold;
+   color: var(--bleu);
+}
+#PDPClub p,
+#PDhoraires p,
+#PDPnewsletter p,
+#PDPreseaux p{
+    color: var(--blanc);
+    font-size:small;
+}
+#PDPnewsletter form img,
+#PDPnewsletter form input{
+    height: 40px;
+}
+#copyright{
+    border: solid;
+    border-top: solid;
+    border-left : none;
+    border-right: none;
+    border-bottom: none;
+    border-color: var(--grismoyen);
+}
+
+#presentation{
+    margin-top: 40px;
+    margin-left: 80px;
+    margin-right: 80px;
+}
+
+#presentation article{
+    border: solid;
+    border-top: none;
+    border-left : none;
+    border-right: none;
+    border-bottom: solid;    
+    border-color: var(--grisclair);
+}
+#presentation article ul{ /* remplacement du caractere liste à puce par coche*/
+    list-style: none;
+}
+#presentation article li::before{
+    content :"\2714";
+    color:var(--orange);
+    padding: 10px;
+}
+#orientation{
+    padding-top: 20px;
+    background-image: url("/images/vente-location.jpg");
+}
+#orientation div{
+    padding: 50px;
+}
+#orientation p{
+    color : var(--blanc);
+}
+#vehiculesRecents{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#vehiculesRecents h1{
+    color: var(--blanc);
+    text-align: center;
+    border: solid;
+    border-top: none;
+    border-left : none;
+    border-right: none;
+    border-bottom: solid;    
+    border-color: var(--orange);
+}
+
+#vehiculesRecents span p {
+    color:var(--blanc);
+    background-color: var(--bleu);
+    text-align: right;
+
+}
+#vehiculesRecents em{
+    text-decoration:line-through;
+    font-size: .7em;
+    color:var(--noir);
+}
+.ordre-article{
+    flex-direction :row;
+}
+
+#pourquoiNousChoisir h2{
+    font-size:larger;
+}
+#presentationActivites{
+    padding: 0;
+    padding-top: 40px;
+    background-image: url("/images/vehicule3.jpg");
+}
+/* adaptation foundation à la charte graphique*/
+h1,
+h2,
+h3{
+    font-weight: bold;
+}
+.row {
+    max-width: 100%;   /* on utlise toute la largerur de l ecran*/
+/*    max-width : 62.5rem;*/
+}    
+.sub-nav{
+  margin-right: 100px;
+}
+.sub-nav dd{
+  align-items: center;
+  margin-left: 0;
+  line-height: 2rem;
+}
+.sub-nav dd a{
+    text-transform: uppercase;
+    height: 2rem;
+}
+.sub-nav dd.active,
+ .sub-nav dd.active a{
+    background-color: var(--orange);
+}
+.sub-nav dd:hover,
+  .sub-nav dd a:hover,
+  .sub-nav dd.active a:hover
+     {
+      background-color: var(--marron);
+      color: var(--blanc);      
+      }
+
+/* */
+@media only screen and (max-width: 40.063em){
+    #presentation,
+    #PDP,
+    #pourquoiNousChoisir{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .ordre-article{
+        display: flex;
+        flex-direction :column-reverse;
+    }
+}
+    
+
