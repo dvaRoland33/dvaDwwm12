@@ -1,0 +1,226 @@
+@import url(https://fonts.google.com/specimen/Montserrat/?query=mont);
+@import url(https://fonts.google.com/specimen/Open+Sans?query=open+sans);
+
+:root {
+/* couleurs de la charte*/ 
+    --blanc: #FFFFFF;
+    --orange: #ee8624;
+    --rose: #FF4848;
+    --marron: #c75b13;
+    --grisclair: #ECEFF3;    
+    --noir: #232628;  
+    --bleu: #6C98E1;
+    --orangeflou: rgba(245, 157, 16, 0.534);
+    --roseflou: rgba(255, 72, 72, 0.733);
+/* couleurs utiles*/
+    --grismoyen: rgb(88, 84, 84);
+    --flou: rgba(255, 255, 255, 0.659);    
+    --debug: #bbb23a;
+}
+/* WAI*/
+.accessibilite{
+    position: absolute;
+    left: -15000px;  
+}
+
+/* couleurs de fond*/
+.bkg-blanc{ background-color: var(--blanc);}
+.bkg-orange{ background-color: var(--orange);}
+.bkg-rose{ background-color: var(--rose);}
+.bkg-marron{ background-color: var(--marron);}
+.bkg-grisclair{ background-color: var(--grisclair);}
+.bkg-grismoyen{ background-color: var(--grismoyen);}
+.bkg-noir{ background-color: var(--noir);}
+.bkg-bleu{ background-color: var(--bleu);}
+.bkg-orangeflou{background-color: var(--orangeflou);}
+.bkg-roseflou{ background-color: var(--roseflou);}
+
+/* couleurs de texte*/ 
+.txt-blanc{ color: var(--blanc);}
+.txt-orange{ color: var(--orange);}
+.txt-rose{ color: var(--rose);}
+.txt-marron{ color: var(--marron);}
+.txt-grisclair{ color: var(--grisclair);}
+.txt-noir{ color: var(--noir);}
+.txt-bleu{ color: var(--bleu);}
+
+/* couleurs de texte*/ 
+.brd-blanc{ border-color: var(--blanc);}
+.brd-orange{ border-color: var(--orange);}
+.brd-rose{ border-color: var(--rose);}
+.brd-marron{ border-color: var(--marron);}
+.brd-grisclair{ border-color: var(--grisclair);}
+.brd-noir{ border-color: var(--noir);}
+.brd-bleu{ border-color: var(--bleu);}
+
+/* */
+.initPage{
+    margin-top : -35px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.fbandeau{
+    font-family: Montserrat,Verdana, Geneva, Tahoma, sans-serif;
+    font-size: smaller;
+}
+.fbandeauTitre{
+    font-family: Montserrat,Verdana, Geneva, Tahoma, sans-serif;
+    font-size: large;
+    font-weight: bold;
+}
+.iconeBandeau{
+    height : 40px;
+    width: auto;
+}
+.fondOrientation{
+    background-image: url("../images/vente-location.jpg");
+}
+#presentation ul{ /* remplacement du caractere liste à puce par coche*/
+    list-style: none;
+}
+#presentation li::before{
+    content :"\2714";
+    color:var(--orange);
+    padding: 10px;
+}
+.fondVentes{
+    background-image: url("../images/vente-location.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
+    height: 300px;
+}
+.positionRecherche{
+    position: relative;
+    top: -220px;
+}
+.hauteurTitreRecherche{
+    height: 100px;
+    text-align: center;
+    padding-top: 25px;
+}
+.TitreVentes{
+   font-size: 3em;
+   color: var(--blanc);
+   position: relative;
+   top: 90px;
+   vertical-align: middle;
+}
+.elementRecherche{
+   height: 40px;
+   border-radius: 0;
+   margin-top: 15px;
+   border: none;
+}
+.prixMobile{
+    background-color: var(--bleu);
+    color: var(--blanc);
+    width: 120px;
+    padding-right: 10px;
+    display:table-cell;
+    text-align: right;
+    vertical-align: middle;
+    font-size: 1.5em;
+    font-weight: bold;
+    position: relative;
+    height: 50px;
+    top: -50px;
+}
+.separateur{
+    border-bottom: solid;
+    border-color: var(--grismoyen);
+}
+.menuConteneur{
+    margin-left: -20px;
+    margin-right: -20px;
+}
+.menuBar{
+    margin: 0;
+    padding: 0;
+    background-color: var(--grisclair);
+    border: none;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 100px;
+}
+.navPave{
+    height: 40px;
+    width: 100px;
+}
+.navLien{
+    width: 100px;
+    height: 40px;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    text-decoration: none;
+    align-content: center;
+    text-transform: uppercase;
+    color: var(--noir);
+    font-weight: bold;
+}
+.navLien:hover,
+.navPave:hover{
+    color: var(--blanc);
+    background-color: var(--orange);
+    font-weight: bold;
+}
+.souligneVehicule{
+    border-bottom: solid;
+    border-color: var(--orange);
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.prix{
+    background-color: var(--bleu);
+    color: var(--blanc);
+    text-align: right;
+    padding-right: 5px;
+    height: 30px;
+    width: 70px;
+    position: relative;
+    top: 10px;
+    right: 5px;
+}
+.prixBarre{
+    background-color: var(--bleu);
+    color: var(--noir);
+    text-align: right;
+    padding-right: 5px;
+    text-decoration: line-through;
+    font-size: smaller;
+    position: relative;
+    top: 10px;
+    right: 5px;
+    height: 15px;
+    width: 70px;
+}
+.blocDescription{
+    height: 80px;
+    background-color: var(--grismoyen);
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+.blocLigneFin{
+    border-top:  solid;
+    border-color: var(--noir);
+    padding-left: 10px;
+    margin-right: 10px;
+}
+.desactiveSousLigne{
+    text-decoration: none;
+}
+.champContact{
+    background-color: var(--grisclair);
+    min-width:max-content;
+    border-radius: 0;
+}
+.champContactMessage{
+    background-color: var(--grisclair);
+    min-width: 120%;
+    border-radius: 0;
+    min-height: 200px;
+}

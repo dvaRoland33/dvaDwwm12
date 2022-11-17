@@ -1,0 +1,20 @@
+import React from "react";
+import ArticleMobile from "./ArticleMobile";
+import ArticleEtendu from "./ArticleEtendu";
+
+
+function Articles() {
+    return (
+      <div>
+        <div className="d-block d-md-none">
+          <ArticleMobile />
+        </div>
+
+        <div className="d-none d-md-block">
+          <ArticleEtendu />
+        </div>
+      </div>
+    );
+  }
+
+  export default Articles; 
