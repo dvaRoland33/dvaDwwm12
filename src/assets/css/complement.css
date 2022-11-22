@@ -1,5 +1,5 @@
-@import url(https://fonts.google.com/specimen/Montserrat/?query=mont);
-@import url(https://fonts.google.com/specimen/Open+Sans?query=open+sans);
+/*@import url(https://fonts.google.com/specimen/Montserrat/?query=mont);*/
+/*@import url(https://fonts.google.com/specimen/Open+Sans?query=open+sans);*/
 
 :root {
 /* couleurs de la charte*/ 
@@ -55,7 +55,8 @@
 
 /* */
 .initPage{
-    margin-top : -35px;
+/*   margin-top : -35px;   */
+    margin-top: 0px;
     padding-left: 20px;
     padding-right: 20px;
 }
