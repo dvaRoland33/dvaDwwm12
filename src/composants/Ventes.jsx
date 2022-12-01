@@ -4,6 +4,17 @@ import PiedsDePage from "./PiedsDePage"
 import Rechercher from "./Rechercher"
 import Articles from "./Articles"
 
+/* la page d'accueil est composé de composants écrits
+    Entete
+      Rechercher 
+      Articles
+    PiedsDePage
+    la gestion de l'ordre d'affichage responsive est gérée par des régles BootStrap
+    Cette page a servit de base pour al page locations
+    avec le changement de la balise
+    <p className="TitreVentes">LOCATION</p>
+*/
+
 class Ventes extends React.Component {
   render(){
     return (

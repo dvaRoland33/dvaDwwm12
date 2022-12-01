@@ -1,14 +1,14 @@
 import logo from "../assets/images/icone-voiture.png" 
 import "../assets/css/complement.css" 
 import React from "react"
-import MultiRange from "./multiRange"
+import SliderDouble from "./SliderDouble"
 
-class Rechercher extends React.Component{
-   
-    render(){
+class Rechercher extends React.Component{   
     
+
+    render(){
         return(
-            <div className="col-10 ps-5 w-80 boiteOmbre">
+            <div className="col-11  w-80 boiteOmbre">
                 <div className="border bg-white mb-2">
                 <div className="bkg-noir txt-blanc fs-2 hauteurTitreRecherche">
                     <img src={logo} alt="logo voiture" className="iconeBandeau"/>
@@ -53,9 +53,9 @@ class Rechercher extends React.Component{
                         <option value="3">plus de 2 ans</option>
                     </select>
                     <p className="row col-12 mt-3">Prix</p>
-                        <MultiRange />                       
+                        <SliderDouble />
                     <div className="row col-12 mb-5 ">               
-                        <input type="reset" value="Réinitialiser" className="elementRecherche bkg-bleu txt-blanc uppercase"></input>  
+                        <input type="reset" value="Réinitialiser" className="elementRecherche bkg-bleu txt-blanc uppercase"></input>   
                     </div>            
                     </form>
                 </div>

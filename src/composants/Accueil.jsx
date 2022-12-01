@@ -7,7 +7,16 @@ import AccueilBienvenue from "./AccueilBienvenue"
 import AccueilOrientation from "./AccueilOrientation"
 import AccueilVehicules from "./AccueilVehicules"
 
-//import "../assets/css/complement.css";
+/* la page d'accueil est composé de composants écrits
+    Entete
+      AccueilPourquoi
+      AcceuilClub
+      AccueilBienvenue
+      AccueilOrientation
+      AccueilVehicules
+    PiedsDePage
+    il sera possible ainis de revoir la composition de cette page en réorganisant les blocs ou leur ordre d'appel
+*/
 
 class Accueil extends React.Component {
   render(){

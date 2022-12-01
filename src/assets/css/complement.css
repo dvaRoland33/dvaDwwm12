@@ -78,7 +78,7 @@
     width: auto;
 }
 .fondOrientation{
-    background-image: url("../images/vente-location.jpg");
+    background-image: url("../images/vente-location.webp");
 }
 #presentation ul{ /* remplacement du caractere liste à puce par coche*/
     list-style: none;
@@ -89,7 +89,7 @@
     padding: 10px;
 }
 .fondVentes{
-    background-image: url("../images/vente-location.jpg");
+    background-image: url("../images/vente-location.webp");
     background-size:cover;
     background-repeat: no-repeat;
     height: 300px;
@@ -228,59 +228,154 @@
 .boiteOmbre{
     box-shadow: 6px 5px 8px 2px darkgrey;
 }
-/* react-slider  */
-.slider-label{
+
+/*slider double*/
+.sliderDouble{
+    margin-left: -10px;
+    margin-right: 10px;
+}
+.sliderGauche{
+    width:100%;
+    z-index:3;
+    position:relative;
+    top:0;
+    border: none;
+    background-color: transparent;
+}
+.sliderDroit{
+    width:100%;
+    z-index:3;
+    position:relative;
+    top: -22px;
+    border: none;
+    background-color: transparent;
+}
+.sliderLabel{
     background-color: var(--grisclair);
-    margin: 10px 10px 0 -10px;
-    height: 40px;
     text-align: center;
-    vertical-align: middle;
+    margin-top: 5px;
 }
-.horizontal-slider {
-    width: 100%;
-    max-width: 500px;
-    height: 6vh;
-    margin: auto;
-    /*margin-left:-15px;*/
-  }
-.thumb {
-    cursor: pointer;
-    position: absolute;
-    z-index: 100;
-    background: #ffffff;
-    border: 8px solid #103faf;
-    border-radius: 100%;
-    display: block;
-    box-shadow: 0 0 2px 0 rgb(0 0 0 / 44%);
-  }
-.thumb.active {
-    background-color: grey;
-  }
-.track {
-    position: relative;
-    background: rgb(131, 127, 127);
-  }
-.track.example-track-0 {
-    background: #487efa;
-  }
-.horizontal-slider .track {
-    top: 17px;
-    height: 5px;
-  }
-.horizontal-slider .thumb {
-    top: 12px;
-    width: 10px;
+.slider{
+    -webkit-appearance: none;     /*nécessaire pour Chrome */
+    padding: 0;                   /* nécessaire pour IE */
+    font: inherit;                /* même rendu suivant font document */
     outline: none;
-    height: 10px;
-    line-height: 38px;
-  }
-    
-.modal{
-    /*position: fixed;
-    top: 10vh;*/
-    background-color: #c75b13;
-    z-index: 80;
+    color: #069;                  /* sert pour couleur de référence, via currentColor, pour le curseur */
+    opacity: .8;
+    background: #CCC;             /* sert pour couleur de fond de la zone de déplacement */
+    box-sizing: border-box;        /* même modèle de boîte pour tous */
+    transition: opacity .2s;
+    cursor: pointer;  
 }
 
-
-     
+/* Chrome*/
+/* la zone de déplacement */
+.slider::-webkit-slider-runnable-track {
+    height: 100%;
+    border: none;
+    border-radius: 0;
+    background-color: transparent;  /* supprimé définie sur l'input */
+  }
+  /* le curseur */
+  .custom-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;       /* également nécessaire sur le curseur */
+    width: 1em;
+    height: inherit;                /* s'adapte à la hauteur de l'input */
+    border: none;
+    border-radius: 0;               /* pris en compte sur Webkit et Edge */
+    background: var(--bleu);       /* pris en compte sur Webkit only */
+  }
+/* FireFox*/
+/* la zone de déplacement */
+.slider::-moz-range-track {
+    height: 100%;
+    border: none;
+    border-radius: 0;
+    background-color: transparent;  /* supprimé définie sur l'input */
+  }
+  /* le curseur */
+  .slider::-moz-range-thumb {
+    width: 1em;
+    height: inherit;                /* s'adapte à la hauteur de l'input */
+    border: solid;                   /* supprimer la bordure */
+    border-radius: 20px;               /* supprimer le rayon */
+    background: currentColor;
+    top: -25px;
+  }
+  /* barre progression avant */
+  .slider::-moz-range-progress {
+    height: 0;
+    background: transparent;        /* supprime barre progression avant */
+  }
+  /* IE Edge*/
+  /* la zone de déplacement */
+.slider::-ms-track {
+    height: 100%;
+    border: none;
+    border-radius: 0;
+    color: transparent;             /* supprime les graduations pour IE */
+    background-color: transparent;  /* supprimé définie sur l'input */
+  }
+  /* le curseur */
+  .slider::-ms-thumb {
+    width: 1em;
+    height: inherit;                /* s'adapte à la hauteur de l'input */
+    border: none;                   /* supprimer la bordure */
+    border-radius: 0;               /* supprimer le rayon */
+    background: var(--bleu);
+  }
+  /* la tooltip de la valeur */
+  .slider::-ms-tooltip {
+    display: none;                  /* supprime l'affichage de la valeur au survol */
+  }
+  /* barre progression avant */
+  .slider::-ms-fill-lower {
+    background: transparent;
+  }
+  /* barre progression après */
+  .slider::-ms-fill-upper {
+    background: transparent;
+  }
+/*==============================*/
+/* partie commune               */
+/*==============================*/
+.bullet {
+    height: 1em;                /* hauteur du curseur */ 
+    color: rgb(40, 12, 199);  /* couleur du curseur */
+    background: transparent;    /*  fond du track*/
+    /* barre de track*/ 
+    background-image: none;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 25%;
+  }
+  /*==============================*/
+  /* le curseur                   */
+  /*==============================*/
+  .bullet::-webkit-slider-thumb,
+  .bullet::-moz-range-thumb,
+  .bullet::-ms-thumb {
+    width: 2em;
+    padding: 0.25em;                                              /* largeur du bord */
+    border: 1px solid rgb(56, 15, 167);
+    border-radius: 50%;
+    box-shadow: 0 0 .5em #FFF inset;
+    background: linear-gradient(rgb(67, 28, 241), rgb(187, 174, 245)) content-box,          /* le centre */
+                linear-gradient(-90deg, #888, #DDD) border-box;   /* le bord */                
+  }
+  .track{ /* position et couleur du track*/ 
+      background-color: rgb(162, 162, 165);
+      width: 100%;
+      height: .4em;
+      position: relative;
+      top : 19px;
+  }
+  .trackSelection{ /* position et couleur du track selectionne*/ 
+    background-color: rgb(59, 27, 221);
+    width: 100%;
+    height: .4em;
+    position: relative;
+    left: 25%;
+    width: 50%;
+    top : 13px;
+}

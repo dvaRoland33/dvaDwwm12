@@ -4,7 +4,11 @@ import PiedsDePage from "./PiedsDePage"
 import Rechercher from "./Rechercher"
 import Articles from "./Articles"
 
-class Ventes extends React.Component {
+/* cette page est une copie de la page ventes
+la seule différence réside dans le titre <p className="TitreVentes">LOCATION</p>
+*/
+
+class Locations extends React.Component {
   render(){
     return (
       <div>
@@ -43,4 +47,4 @@ class Ventes extends React.Component {
   }
 }
 
-  export default Ventes
+  export default Locations
