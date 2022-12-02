@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "metro4-react": "^0.1.4",
+    "multi-range-slider-react": "^2.0.2",
     "react": "^18.2.0",
     "react-bootstrap": "^2.6.0",
     "react-burger-menu": "^3.0.8",

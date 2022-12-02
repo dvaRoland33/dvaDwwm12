@@ -1,12 +1,20 @@
 import logo from "../assets/images/icone-voiture.png" 
 import "../assets/css/complement.css" 
-import React from "react"
-import SliderDouble from "./SliderDouble"
+import React, { useState } from "react"
+import MultiRangeSlider from "multi-range-slider-react"
 
-class Rechercher extends React.Component{   
-    
+//valeur des bornes Mini et Maxi des prix
+const borneMin=2000
+const borneMax=80000
 
-    render(){
+function Rechercher (){ 
+    const [minValue, set_minValue] = useState(borneMin)
+    const [maxValue, set_maxValue] = useState(borneMax)
+    const handleInput = (e) => {
+	    set_minValue(e.minValue)
+	    set_maxValue(e.maxValue)
+     }
+
         return(
             <div className="col-11  w-80 boiteOmbre">
                 <div className="border bg-white mb-2">
@@ -52,8 +60,27 @@ class Rechercher extends React.Component{
                         <option value="2">de 1 à 2 ans</option>
                         <option value="3">plus de 2 ans</option>
                     </select>
-                    <p className="row col-12 mt-3">Prix</p>
-                        <SliderDouble />
+                    <p className="row col-12 mt-3 ">Prix</p>
+                        <MultiRangeSlider
+                            min={borneMin}
+                            max={borneMax}
+			                step={5}
+			                minValue={minValue}
+			                maxValue={maxValue}
+                            barInnerColor= 'blue'
+                            ruler ='false'
+                            label='false'    
+                            style={{ border: "none", 
+                                    boxShadow: "none", 
+                                    padding: "5px 15px 15px 0px" }}
+			                onInput={(e) => {
+				                handleInput(e)
+			                     }
+                            }
+		                />
+                       <div className="affichageValeur">{minValue}</div> 
+                       <div className="affichageValeur">{maxValue}</div> 
+                                     
                     <div className="row col-12 mb-5 ">               
                         <input type="reset" value="Réinitialiser" className="elementRecherche bkg-bleu txt-blanc uppercase"></input>   
                     </div>            
@@ -61,7 +88,6 @@ class Rechercher extends React.Component{
                 </div>
             </div>
         )
-    }
 }
 
 export default Rechercher
