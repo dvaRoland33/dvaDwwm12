@@ -1,0 +1,12 @@
+{
+    "adresse" :{
+                 "ligne1": "AVENUE CHARLES DE GAULLE",
+                 "codePostal": "75000",
+                 "ville": "PARIS"
+    },
+    "ouverture":{"horaires" : "09:00 - 17:00",
+                    "jours" : "Lundi - Samedi",
+                "exclusion" : "Dimanche et jours féries"
+    },
+    "telephone": "01 23 45 67 89"   
+}

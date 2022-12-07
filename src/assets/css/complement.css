@@ -22,6 +22,7 @@
     position: absolute;
     left: -15000px;  
 }
+/* prevu pour apparaitre au début du chargement + SEO puis masqué par les blocs de page*/
 .SEO{
     display:none;
 }
@@ -58,11 +59,8 @@
 
 /* */
 .initPage{
-/*   margin-top : -35px;   */
     margin-top: 0px;
     padding: 0 20px 0 20px;
-    /*padding-left: 20px;
-    padding-right: 20px;*/
 }
 .fbandeau{
     font-family: Montserrat,Verdana, Geneva, Tahoma, sans-serif;
@@ -77,22 +75,29 @@
     height : 40px;
     width: auto;
 }
+/* fonds des pages */
+.fondVentes{
+    background-image: url("../images/vente-location.webp");
+    background-size:cover;
+    background-repeat: no-repeat;
+    height: 300px;
+}
 .fondOrientation{
     background-image: url("../images/vente-location.webp");
 }
-#presentation ul{ /* remplacement du caractere liste à puce par coche*/
+.fondContact{
+    background-image: url("../images/vehicule3.webp");
+    height: 200px;
+
+}
+/* remplacement du caractere liste à puce par coche*/
+#presentation ul{ 
     list-style: none;
 }
 #presentation li::before{
     content :"\2714";
     color:var(--orange);
     padding: 10px;
-}
-.fondVentes{
-    background-image: url("../images/vente-location.webp");
-    background-size:cover;
-    background-repeat: no-repeat;
-    height: 300px;
 }
 .positionRecherche{
     position: relative;
@@ -213,6 +218,7 @@
 .desactiveSousLigne{
     text-decoration: none;
 }
+/*  formulaire contact */
 .champContact{
     background-color: var(--grisclair);
     min-width:max-content;
@@ -224,11 +230,9 @@
     border-radius: 0;
     min-height: 200px;
 }
-
 .boiteOmbre{
     box-shadow: 6px 5px 8px 2px darkgrey;
 }
-
 .affichageValeur{
   background-color: var(--grisclair);
   margin-right: 10px;
@@ -237,6 +241,7 @@
   height: 40px;
   margin-top: 10px;
 }
+
 
 
 
